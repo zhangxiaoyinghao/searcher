@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Console logger. -->
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{HH:mm:ss.SSS}] %-5p (%F:%L) - %m%n"/>
+		</layout>
+	</appender>
+
+	<!-- Debug Logger -->
+	<appender name="debugFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="logs/debug.log"/>
+		<param name="Threshold" value="DEBUG"/>
+		<param name="append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d] %-5p (%F:%L) - %m%n"/>
+		</layout>
+	</appender>
+
+	<!-- Info Logger -->
+	<appender name="infoFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="logs/info.log"/>
+		<param name="Threshold" value="INFO"/>
+		<param name="append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d] %-5p (%F:%L) - %m%n"/>
+		</layout>
+	</appender>
+
+	<!-- Error Logger -->
+	<appender name="errorFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="logs/error.log"/>
+		<param name="Threshold" value="ERROR"/>
+		<param name="append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d] %-5p (%F:%L) - %m%n"/>
+		</layout>
+	</appender>
+
+	<!-- Application Loggers -->
+	<logger name="com.noppt">
+		<level value="DEBUG"/>
+	</logger>
+
+	<!-- Root Logger -->
+	<root>
+		<priority value="INFO"/>
+		<appender-ref ref="consoleAppender"/>
+		<appender-ref ref="debugFileAppender"/>
+		<appender-ref ref="infoFileAppender"/>
+		<appender-ref ref="errorFileAppender"/>
+	</root>
+</log4j:configuration>

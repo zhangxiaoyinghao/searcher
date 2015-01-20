@@ -1,0 +1,147 @@
+[2015-01-20 19:49:25,969] INFO  (ContextLoader.java:272) - Root WebApplicationContext: initialization started
+[2015-01-20 19:49:26,095] INFO  (AbstractApplicationContext.java:513) - Refreshing Root WebApplicationContext: startup date [Tue Jan 20 19:49:26 CST 2015]; root of context hierarchy
+[2015-01-20 19:49:26,173] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [applicationContext-common.xml]
+[2015-01-20 19:49:26,423] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [spring-mvc-common.xml]
+[2015-01-20 19:49:26,516] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [applicationContext-searcher.xml]
+[2015-01-20 19:49:26,719] INFO  (PropertiesLoaderSupport.java:172) - Loading properties file from class path resource [config.properties]
+[2015-01-20 19:49:26,782] INFO  (ExecutorConfigurationSupport.java:165) - Initializing ExecutorService 
+[2015-01-20 19:49:26,797] INFO  (PostProcessorRegistrationDelegate.java:309) - Bean 'resendTaskExecutor' of type [class org.springframework.scheduling.config.TaskExecutorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2015-01-20 19:49:26,797] INFO  (PostProcessorRegistrationDelegate.java:309) - Bean 'resendTaskExecutor' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2015-01-20 19:49:26,844] INFO  (ExecutorConfigurationSupport.java:165) - Initializing ExecutorService  'resendTaskScheduler'
+[2015-01-20 19:49:26,844] INFO  (PostProcessorRegistrationDelegate.java:309) - Bean 'resendTaskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2015-01-20 19:49:27,452] INFO  (PropertiesLoaderSupport.java:172) - Loading properties file from class path resource [config.properties]
+[2015-01-20 19:49:27,468] INFO  (AbstractHandlerMethodMapping.java:181) - Mapped "{[/searcher/test/test],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public cn.zy.commons.webdev.http.RestResponse cn.chinattclub.searcher.web.TestController.test(java.lang.String)
+[2015-01-20 19:49:27,516] INFO  (Version.java:27) - HV000001: Hibernate Validator 5.0.1.Final
+[2015-01-20 19:49:27,890] INFO  (ContextLoader.java:312) - Root WebApplicationContext: initialization completed in 1905 ms
+[2015-01-20 19:49:28,015] INFO  (FrameworkServlet.java:461) - FrameworkServlet 'spring-mvc': initialization started
+[2015-01-20 19:49:28,015] INFO  (AbstractApplicationContext.java:513) - Refreshing WebApplicationContext for namespace 'spring-mvc-servlet': startup date [Tue Jan 20 19:49:28 CST 2015]; parent: Root WebApplicationContext
+[2015-01-20 19:49:28,031] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [spring-mvc-common.xml]
+[2015-01-20 19:49:28,063] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [spring-mvc-app.xml]
+[2015-01-20 19:49:28,125] INFO  (PropertiesLoaderSupport.java:172) - Loading properties file from class path resource [config.properties]
+[2015-01-20 19:49:28,141] ERROR (FrameworkServlet.java:474) - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.handler.MappedInterceptor#2': Cannot create inner bean 'AuthenticateInterceptor' of type [cn.chinattclub.izou7.interceptor.RequestAnalyzerInterceptor] while setting constructor argument; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [cn.chinattclub.izou7.interceptor.RequestAnalyzerInterceptor] for bean with name 'AuthenticateInterceptor' defined in class path resource [spring-mvc-app.xml]; nested exception is java.lang.ClassNotFoundException: cn.chinattclub.izou7.interceptor.RequestAnalyzerInterceptor
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:643)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:606)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:657)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:525)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:466)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:241)
+	at org.mortbay.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:440)
+	at org.mortbay.jetty.servlet.ServletHolder.doStart(ServletHolder.java:263)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.servlet.ServletHandler.initialize(ServletHandler.java:736)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:140)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:97)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.handler.MappedInterceptor#2': Cannot create inner bean 'AuthenticateInterceptor' of type [cn.chinattclub.izou7.interceptor.RequestAnalyzerInterceptor] while setting constructor argument; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [cn.chinattclub.izou7.interceptor.RequestAnalyzerInterceptor] for bean with name 'AuthenticateInterceptor' defined in class path resource [spring-mvc-app.xml]; nested exception is java.lang.ClassNotFoundException: cn.chinattclub.izou7.interceptor.RequestAnalyzerInterceptor
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:282)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:121)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:627)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:148)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1114)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1017)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:467)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1071)
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:277)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.detectMappedInterceptors(AbstractHandlerMapping.java:223)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.initApplicationContext(AbstractHandlerMapping.java:197)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:120)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:73)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:74)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:119)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:94)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:407)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	... 28 more
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [cn.chinattclub.izou7.interceptor.RequestAnalyzerInterceptor] for bean with name 'AuthenticateInterceptor' defined in class path resource [spring-mvc-app.xml]; nested exception is java.lang.ClassNotFoundException: cn.chinattclub.izou7.interceptor.RequestAnalyzerInterceptor
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1327)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:452)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:269)
+	... 52 more
+Caused by: java.lang.ClassNotFoundException: cn.chinattclub.izou7.interceptor.RequestAnalyzerInterceptor
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at org.mortbay.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:392)
+	at runjettyrun.ProjectClassLoader.loadClass(ProjectClassLoader.java:89)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:238)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:392)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1348)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1319)
+	... 54 more
+[2015-01-20 19:51:44,448] INFO  (ContextLoader.java:272) - Root WebApplicationContext: initialization started
+[2015-01-20 19:51:44,557] INFO  (AbstractApplicationContext.java:513) - Refreshing Root WebApplicationContext: startup date [Tue Jan 20 19:51:44 CST 2015]; root of context hierarchy
+[2015-01-20 19:51:44,620] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [applicationContext-common.xml]
+[2015-01-20 19:51:44,855] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [spring-mvc-common.xml]
+[2015-01-20 19:51:44,964] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [applicationContext-searcher.xml]
+[2015-01-20 19:51:45,167] INFO  (PropertiesLoaderSupport.java:172) - Loading properties file from class path resource [config.properties]
+[2015-01-20 19:51:45,229] INFO  (ExecutorConfigurationSupport.java:165) - Initializing ExecutorService 
+[2015-01-20 19:51:45,229] INFO  (PostProcessorRegistrationDelegate.java:309) - Bean 'resendTaskExecutor' of type [class org.springframework.scheduling.config.TaskExecutorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2015-01-20 19:51:45,229] INFO  (PostProcessorRegistrationDelegate.java:309) - Bean 'resendTaskExecutor' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2015-01-20 19:51:45,291] INFO  (ExecutorConfigurationSupport.java:165) - Initializing ExecutorService  'resendTaskScheduler'
+[2015-01-20 19:51:45,291] INFO  (PostProcessorRegistrationDelegate.java:309) - Bean 'resendTaskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2015-01-20 19:51:45,853] INFO  (PropertiesLoaderSupport.java:172) - Loading properties file from class path resource [config.properties]
+[2015-01-20 19:51:45,884] INFO  (AbstractHandlerMethodMapping.java:181) - Mapped "{[/searcher/test/test],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public cn.zy.commons.webdev.http.RestResponse cn.chinattclub.searcher.web.TestController.test(java.lang.String)
+[2015-01-20 19:51:45,932] INFO  (Version.java:27) - HV000001: Hibernate Validator 5.0.1.Final
+[2015-01-20 19:51:46,291] INFO  (ContextLoader.java:312) - Root WebApplicationContext: initialization completed in 1843 ms
+[2015-01-20 19:51:46,369] INFO  (FrameworkServlet.java:461) - FrameworkServlet 'spring-mvc': initialization started
+[2015-01-20 19:51:46,369] INFO  (AbstractApplicationContext.java:513) - Refreshing WebApplicationContext for namespace 'spring-mvc-servlet': startup date [Tue Jan 20 19:51:46 CST 2015]; parent: Root WebApplicationContext
+[2015-01-20 19:51:46,369] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [spring-mvc-common.xml]
+[2015-01-20 19:51:46,401] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [spring-mvc-app.xml]
+[2015-01-20 19:51:46,448] INFO  (PropertiesLoaderSupport.java:172) - Loading properties file from class path resource [config.properties]
+[2015-01-20 19:51:46,448] INFO  (AbstractHandlerMethodMapping.java:181) - Mapped "{[/searcher/test/test],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public cn.zy.commons.webdev.http.RestResponse cn.chinattclub.searcher.web.TestController.test(java.lang.String)
+[2015-01-20 19:51:46,638] INFO  (FrameworkServlet.java:480) - FrameworkServlet 'spring-mvc': initialization completed in 269 ms
+[2015-01-20 19:53:43,624] WARN  (DispatcherServlet.java:1118) - No mapping found for HTTP request with URI [/searcher/test/test] in DispatcherServlet with name 'spring-mvc'
+[2015-01-20 19:53:43,633] WARN  (DispatcherServlet.java:1118) - No mapping found for HTTP request with URI [/searcher/error] in DispatcherServlet with name 'spring-mvc'
+[2015-01-20 19:53:58,431] WARN  (DispatcherServlet.java:1118) - No mapping found for HTTP request with URI [/searcher/test/test] in DispatcherServlet with name 'spring-mvc'
+[2015-01-20 19:53:58,432] WARN  (DispatcherServlet.java:1118) - No mapping found for HTTP request with URI [/searcher/error] in DispatcherServlet with name 'spring-mvc'
+[2015-01-20 19:54:00,358] WARN  (DispatcherServlet.java:1118) - No mapping found for HTTP request with URI [/searcher/test/test] in DispatcherServlet with name 'spring-mvc'
+[2015-01-20 19:54:00,358] WARN  (DispatcherServlet.java:1118) - No mapping found for HTTP request with URI [/searcher/error] in DispatcherServlet with name 'spring-mvc'
+[2015-01-20 19:54:01,955] WARN  (DispatcherServlet.java:1118) - No mapping found for HTTP request with URI [/searcher/test/test] in DispatcherServlet with name 'spring-mvc'
+[2015-01-20 19:54:01,955] WARN  (DispatcherServlet.java:1118) - No mapping found for HTTP request with URI [/searcher/error] in DispatcherServlet with name 'spring-mvc'
+[2015-01-20 19:55:00,961] INFO  (ContextLoader.java:272) - Root WebApplicationContext: initialization started
+[2015-01-20 19:55:01,086] INFO  (AbstractApplicationContext.java:513) - Refreshing Root WebApplicationContext: startup date [Tue Jan 20 19:55:01 CST 2015]; root of context hierarchy
+[2015-01-20 19:55:01,148] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [applicationContext-common.xml]
+[2015-01-20 19:55:01,383] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [spring-mvc-common.xml]
+[2015-01-20 19:55:01,492] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [applicationContext-searcher.xml]
+[2015-01-20 19:55:01,695] INFO  (PropertiesLoaderSupport.java:172) - Loading properties file from class path resource [config.properties]
+[2015-01-20 19:55:01,773] INFO  (ExecutorConfigurationSupport.java:165) - Initializing ExecutorService 
+[2015-01-20 19:55:01,773] INFO  (PostProcessorRegistrationDelegate.java:309) - Bean 'resendTaskExecutor' of type [class org.springframework.scheduling.config.TaskExecutorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2015-01-20 19:55:01,773] INFO  (PostProcessorRegistrationDelegate.java:309) - Bean 'resendTaskExecutor' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2015-01-20 19:55:01,835] INFO  (ExecutorConfigurationSupport.java:165) - Initializing ExecutorService  'resendTaskScheduler'
+[2015-01-20 19:55:01,835] INFO  (PostProcessorRegistrationDelegate.java:309) - Bean 'resendTaskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2015-01-20 19:55:02,428] INFO  (PropertiesLoaderSupport.java:172) - Loading properties file from class path resource [config.properties]
+[2015-01-20 19:55:02,444] INFO  (AbstractHandlerMethodMapping.java:181) - Mapped "{[/searcher/test/test],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public cn.zy.commons.webdev.http.RestResponse cn.chinattclub.searcher.web.TestController.test(java.lang.String)
+[2015-01-20 19:55:02,507] INFO  (Version.java:27) - HV000001: Hibernate Validator 5.0.1.Final
+[2015-01-20 19:55:02,866] INFO  (ContextLoader.java:312) - Root WebApplicationContext: initialization completed in 1890 ms
+[2015-01-20 19:55:02,944] INFO  (FrameworkServlet.java:461) - FrameworkServlet 'spring-mvc': initialization started
+[2015-01-20 19:55:02,944] INFO  (AbstractApplicationContext.java:513) - Refreshing WebApplicationContext for namespace 'spring-mvc-servlet': startup date [Tue Jan 20 19:55:02 CST 2015]; parent: Root WebApplicationContext
+[2015-01-20 19:55:02,944] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [spring-mvc-common.xml]
+[2015-01-20 19:55:02,976] INFO  (XmlBeanDefinitionReader.java:316) - Loading XML bean definitions from class path resource [spring-mvc-app.xml]
+[2015-01-20 19:55:03,023] INFO  (PropertiesLoaderSupport.java:172) - Loading properties file from class path resource [config.properties]
+[2015-01-20 19:55:03,023] INFO  (AbstractHandlerMethodMapping.java:181) - Mapped "{[/searcher/test/test],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public cn.zy.commons.webdev.http.RestResponse cn.chinattclub.searcher.web.TestController.test(java.lang.String)
+[2015-01-20 19:55:03,195] INFO  (FrameworkServlet.java:480) - FrameworkServlet 'spring-mvc': initialization completed in 251 ms
